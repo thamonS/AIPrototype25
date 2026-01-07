@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IrisAI Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Iris Predictor</h1>
+        <p class="subtitle">Enter flower measurements below</p>
+        
+        <form id="predictionForm">
+            <div class="input-group">
+                <label>Sepal Length (cm)</label>
+                <input type="number" step="0.1" name="sl" required placeholder="5.1">
+            </div>
+            
+            <div class="input-group">
+                <label>Sepal Width (cm)</label>
+                <input type="number" step="0.1" name="sw" required placeholder="3.5">
+            </div>
+
+            <div class="input-group">
+                <label>Petal Length (cm)</label>
+                <input type="number" step="0.1" name="pl" required placeholder="1.4">
+            </div>
+
+            <div class="input-group">
+                <label>Petal Width (cm)</label>
+                <input type="number" step="0.1" name="pw" required placeholder="0.2">
+            </div>
+
+<form id="predictionForm">
+            <button type="submit" id="submitBtn">
+                <span id="btnText">Analyze Flower</span>
+                <div class="loader" id="btnLoader"></div>
+            </button>
+        </form>
+
+        <div id="result-card">
+            <img id="flower-img" src="" alt="Flower Image">
+            <h2 id="prediction-text"></h2>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
